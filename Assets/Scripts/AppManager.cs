@@ -24,7 +24,23 @@ public class AppManager : MonoBehaviour
 
 
     #region Stats
-   
+    [SerializeField] Camera normalCam;
+    [SerializeField] Camera ARCam;
+    public int selectedProduct = 0;
+    [SerializeField] Lean.Touch.LeanSelect leanSelect;
 
+    #endregion
+
+    #region Methods
+    public void ChangeCam(string cam)
+    {
+        if(cam == "normal")
+        {
+            leanSelect.Camera = normalCam;
+        }else if(cam == "AR")
+        {
+            leanSelect.Camera = ARCam;
+        }
+    }
     #endregion
 }

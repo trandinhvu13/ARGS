@@ -103,7 +103,7 @@ public class Category : MonoBehaviour
         {
             productImage.sprite = product1;
         }
-
+        AppManager.Instance.selectedProduct = productID;
         navBar.SetActive(false);
         LeanTween.moveLocalX(contentPanel, -0.2f, productTweenTime).setEase(productTweenType);
         LeanTween.moveLocalX(productPanel, 0, productTweenTime).setEase(productTweenType);
@@ -129,6 +129,12 @@ public class Category : MonoBehaviour
         decorImage.sprite = normalDecor;
         LeanTween.scale(potteryGameObject, new Vector3(1, 1, 1), 0);
         LeanTween.scale(decorGameObject, Vector3.zero, 0);
+    }
+    public void ARButton()
+    {
+        //doi sang man hinh AR
+        //tat man hinh normal
+        AppManager.Instance.ChangeCam("AR");
     }
     #endregion
 

@@ -20,11 +20,11 @@ public class PlacementIndicator : MonoBehaviour
 
      void Update()
     {
-        // shoot a raycast from the center of the screen
+
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
         rayManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.Planes);
 
-        // if we hit AR Plane, Update the postion and rotation
+
 
         if (hits.Count > 0)
         {

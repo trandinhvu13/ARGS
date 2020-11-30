@@ -5,33 +5,59 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
-
+    public GameObject conNgua;
+    [SerializeField]
     private PlacementIndicator placementIndicator;
+    [SerializeField]
+    private GameObject spawnedObject;
+    public float rotateSpeed = 10;
+
 
 
     void Start()
     {
-        placementIndicator = FindObjectOfType<PlacementIndicator>();
+
 
     }
 
-  /*  void Update()
+    public void Activate()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (!AR1AnimationManager.Instance.isObjectSpawn)
         {
-            GameObject obj = Instantiate(objectToSpawn, 
-                placementIndicator.transform.position, placementIndicator.transform.rotation);
-           
+            objectToSpawn = SelectProduct();
+            AR1AnimationManager.Instance.ToggleIndicator();
+            spawnedObject = Instantiate(objectToSpawn, placementIndicator.transform.position, placementIndicator.transform.rotation);
+            objectToSpawn = null;
         }
-        
-    } */
-
-    public void Activate() {
-
-        GameObject obj = Instantiate(objectToSpawn,
-                placementIndicator.transform.position, placementIndicator.transform.rotation);
-
     }
     
-   
+
+    public GameObject SelectProduct()
+    {
+        if (AppManager.Instance.selectedProduct == 1)
+        {
+            return conNgua;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void RotateProduct(string dir)
+    {
+        if (spawnedObject == null)
+        {
+            return;
+        }
+
+        if (dir == "left")
+        {
+            spawnedObject.transform.Rotate(0, -rotateSpeed * Time.deltaTime, 0);
+        }
+        else if (dir == "right")
+        {
+            spawnedObject.transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+        }
+    }
 }
