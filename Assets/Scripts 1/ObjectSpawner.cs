@@ -12,7 +12,24 @@ public class ObjectSpawner : MonoBehaviour
     private GameObject spawnedObject;
     public float rotateSpeed = 10;
 
+    #region Singleton
+    private static ObjectSpawner _instance;
 
+    public static ObjectSpawner Instance { get { return _instance; } }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    #endregion
 
     void Start()
     {
@@ -59,5 +76,10 @@ public class ObjectSpawner : MonoBehaviour
         {
             spawnedObject.transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
         }
+    }
+    public void ExitAR1()
+    {
+        Destroy(spawnedObject);
+        spawnedObject = null;
     }
 }

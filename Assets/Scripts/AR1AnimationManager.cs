@@ -26,6 +26,11 @@ public class AR1AnimationManager : MonoBehaviour
     #region Variables
     [SerializeField] GameObject indicator;
     public bool isObjectSpawn = false;
+    public GameObject rotateLeft;
+    public GameObject rotateRight;
+    public GameObject shutterButton;
+    public BoxCollider indicatorCollider;
+    
     #endregion
 
     #region Methods
@@ -34,13 +39,29 @@ public class AR1AnimationManager : MonoBehaviour
         if (isObjectSpawn)
         {
             isObjectSpawn = false;
-            indicator.SetActive(false);
+            indicator.SetActive(true);
+            rotateLeft.SetActive(false);
+            rotateRight.SetActive(false);
+            shutterButton.SetActive(false);
+            indicatorCollider.enabled = true;
         }
         else
         {
             isObjectSpawn = true;
-            indicator.SetActive(true);
+            indicator.SetActive(false);
+            rotateLeft.SetActive(true);
+            rotateRight.SetActive(true);
+            shutterButton.SetActive(true);
+            indicatorCollider.enabled = false;
         }
+    }
+    public void ExitAR1()
+    {
+        indicator.SetActive(true);
+        rotateLeft.SetActive(false);
+        rotateRight.SetActive(false);
+        shutterButton.SetActive(false);
+        isObjectSpawn = false;
     }
     #endregion
 }
