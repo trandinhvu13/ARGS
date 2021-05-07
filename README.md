@@ -1,15 +1,17 @@
-# ARGS
-# Escape Laboratory VR
+# AR Gốm Sứ
 
 ## Introduction
-This game was made for a college assignment.<br/> 
-It was also the first time I was exposed to Unity Engine and C# and start learning them from the ground up.<br/>
-The game was gone through many versions and designs but in the end it was never finished and only usable for demonstation in class.<br/>
+A project I worked with a friend (Chu Quynh Anh) from FPT Greenwich University about implementing AR technology to pottery business.  
+The app makes use of Vuforia for image tracking and plane detection. 
+All the UI design and 3D models are made by my friend and her group.  
 
-## About the game
-You are stuck in a Pac-man-like maze lab and your mission is to find all the keys to get out of there.<br/>
-You will have a gun and a radar tablet indicating the position of the keys.<br/>
-There will be enemies wandering around the maze, use your gun to shoot them.<br/>
+## About the app
+The app has 3 basic functionalities:
+- Browsing the store and available pottery product (not fully functional and is only served as a demonstration)  
+- Showing true-size 3D model of the pottery item that customers want to preview in their house, table, etc...  
+- Play AR animation on a real-life pottery item.  
+
+Also user can take a shot of the AR screen to their phone.
 
 ## Previews
 <p align="center">
