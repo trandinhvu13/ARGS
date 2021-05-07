@@ -2,7 +2,7 @@
 
 ## Introduction
 A project I worked with a friend (Chu Quynh Anh) from FPT Greenwich University about implementing AR technology to pottery business.  
-The app makes use of Vuforia for image tracking and plane detection. 
+The app makes use of Vuforia for image tracking and plane detection.  
 All the UI design and 3D models are made by my friend and her group.  
 
 ## About the app
