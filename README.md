@@ -5,6 +5,9 @@ A project I worked with a friend (Chu Quynh Anh) from FPT Greenwich University a
 The app makes use of Vuforia for image tracking and plane detection.  
 All the UI design and 3D models are made by my friend and her group.  
 
+## Supported platforms
+- Android
+
 ## About the app
 The app has 3 basic functionalities:
 - Browsing the store and available pottery product (not fully functional and is only served as a demonstration)  
